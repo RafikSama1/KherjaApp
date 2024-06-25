@@ -5,6 +5,6 @@ module.exports = model("Voyage", {
     destinations: Array,
     description: Array,
     price: Number,
-    rating: String,
+    rating: Number,
     picture_link: String
 });
