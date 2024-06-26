@@ -1,13 +1,14 @@
 const {Router} = require("express");
 const router = Router();
+const objectIdMiddleware = require("../middelware/validObjectId.middleware");
 
 const voyagesControllers = require("../controllers/voyages.contollers");
 
-router.get('/', voyagesControllers.index);
-router.get('/:id', voyagesControllers.show);
-router.post('/', voyagesControllers.store);
-router.put('/:id', voyagesControllers.update);
-router.delete('/:id', voyagesControllers.delete);
+router.get('/kherja', voyagesControllers.index);
+router.get('/kherja/:id',objectIdMiddleware, voyagesControllers.show);
+router.post('/kherja', voyagesControllers.store);
+router.put('/kherja/:id',objectIdMiddleware, voyagesControllers.update);
+router.delete('/kherja/:id',objectIdMiddleware, voyagesControllers.delete);
 
 
 module.exports = router;

@@ -2,8 +2,7 @@ const Voyage = require("../models/Voyage");
 
 exports.index = async(req, res) =>{
     const filter = req.query.rating;
-    console.log(req.query);
-    const voyages = await Voyage.find().where("rating").gt(filter);
+    const voyages = await Voyage.find();
     res.json(voyages);
 };
 
